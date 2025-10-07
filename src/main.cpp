@@ -25,7 +25,7 @@ void pausar() {
 void opcao1() {
     limparConsola();
     cout << "\n=== OPÇÃO 1 SELECIONADA ===\n";
-    cout << "Aqui você pode colocar o código da opção 1.\n";
+    cout << "INC 1.\n";
     pausar();
     limparConsola();
 }
@@ -33,7 +33,7 @@ void opcao1() {
 void opcao2() {
     limparConsola();
     cout << "\n=== OPÇÃO 2 SELECIONADA ===\n";
-    cout << "Aqui você pode colocar o código da opção 2.\n";
+    cout << "INC 2.\n";
     pausar();
     limparConsola();
 }
@@ -41,7 +41,7 @@ void opcao2() {
 void opcao3() {
     limparConsola();
     cout << "\n=== OPÇÃO 3 SELECIONADA ===\n";
-    cout << "Aqui você pode colocar o código da opção 3.\n";
+    cout << "INC 3.\n";
     pausar();
     limparConsola();
 }
@@ -49,7 +49,7 @@ void opcao3() {
 void opcao4() {
     limparConsola();
     cout << "\n=== OPÇÃO 4 SELECIONADA ===\n";
-    cout << "Aqui você pode colocar o código da opção 4.\n";
+    cout << "INC 4.\n";
     pausar();
     limparConsola();
 }
@@ -57,7 +57,7 @@ void opcao4() {
 void opcao5() {
     limparConsola();
     cout << "\n=== OPÇÃO 5 SELECIONADA ===\n";
-    cout << "Aqui você pode colocar o código da opção 5.\n";
+    cout << "INC 5.\n";
     pausar();
     limparConsola();
 }
@@ -117,7 +117,7 @@ int main() {
                 break;
             case 0:
                 limparConsola();
-                cout << "\nSaindo do programa... Até logo!\n";
+                cout << "\nA sair do programa...\n";
                 continuar = false;
                 break;
             default:
