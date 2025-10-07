@@ -9,49 +9,59 @@ void limparBuffer() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+// Função para limpar o console
+void limparConsola() {
+    cout << "\033[2J\033[1;1H";  // Sequência ANSI para limpar a tela
+    cout.flush();                 // Força a limpeza do buffer
+}
+
 // Função para pausar e aguardar o usuário
 void pausar() {
     cout << "\nPressione Enter para continuar...";
-    cin.get();
+    cin.get(); // Remove o cin.ignore anterior que estava causando o problema
 }
 
-// Funções para cada opção do menu - personalize estas funções
+// Funções para cada opção do menu
 void opcao1() {
+    limparConsola();
     cout << "\n=== OPÇÃO 1 SELECIONADA ===\n";
     cout << "Aqui você pode colocar o código da opção 1.\n";
-    // Adicione seu código aqui
     pausar();
+    limparConsola();
 }
 
 void opcao2() {
+    limparConsola();
     cout << "\n=== OPÇÃO 2 SELECIONADA ===\n";
     cout << "Aqui você pode colocar o código da opção 2.\n";
-    // Adicione seu código aqui
     pausar();
+    limparConsola();
 }
 
 void opcao3() {
+    limparConsola();
     cout << "\n=== OPÇÃO 3 SELECIONADA ===\n";
     cout << "Aqui você pode colocar o código da opção 3.\n";
-    // Adicione seu código aqui
     pausar();
+    limparConsola();
 }
 
 void opcao4() {
+    limparConsola();
     cout << "\n=== OPÇÃO 4 SELECIONADA ===\n";
     cout << "Aqui você pode colocar o código da opção 4.\n";
-    // Adicione seu código aqui
     pausar();
+    limparConsola();
 }
 
 void opcao5() {
+    limparConsola();
     cout << "\n=== OPÇÃO 5 SELECIONADA ===\n";
     cout << "Aqui você pode colocar o código da opção 5.\n";
-    // Adicione seu código aqui
     pausar();
+    limparConsola();
 }
 
-// Função para mostrar o menu
 void mostrarMenu() {
     cout << "\n========================================\n";
     cout << "           MENU PRINCIPAL\n";
@@ -70,15 +80,20 @@ int main() {
     int opcao;
     bool continuar = true;
 
-    cout << "Bem-vindo ao Menu Interativo!\n";
+    limparConsola();
+    cout << "Bem-vindo ao Menu Interativo!\nPressione Enter para começar...";
+    cin.get(); // Substitui o pausar() aqui para evitar double-enter
 
     while (continuar) {
+        limparConsola();
         mostrarMenu();
         
-        // Validação de entrada
-        while (!(cin >> opcao)) {
+        cin >> opcao;
+        
+        if (cin.fail()) {
             cout << "Entrada inválida! Digite um número: ";
             limparBuffer();
+            continue;
         }
         
         limparBuffer(); // Limpa o buffer após a entrada válida
@@ -101,12 +116,14 @@ int main() {
                 opcao5();
                 break;
             case 0:
+                limparConsola();
                 cout << "\nSaindo do programa... Até logo!\n";
                 continuar = false;
                 break;
             default:
                 cout << "\nOpção inválida! Tente novamente.\n";
                 pausar();
+                limparConsola();
                 break;
         }
     }
