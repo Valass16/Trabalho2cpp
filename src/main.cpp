@@ -91,8 +91,33 @@ void opcao2() {
 
 void opcao3() {
     limparConsola();
-    cout << "\n=== OPÇÃO 3 SELECIONADA ===\n";
-    cout << "INC 3.\n";
+cout << "\n=== ALTERNA MAIÚSCULAS E MINÚSCULAS ===\n";
+
+    cout << "Digite uma palavra ou frase: ";
+
+    string texto;
+
+    getline(cin, texto);
+ 
+    // Alternar maiúsculas e minúsculas
+
+    for (size_t i = 0; i < texto.size(); ++i) {
+
+         if (isalpha(texto[i])) {
+
+             if (islower(texto[i]))
+
+                 texto[i] = toupper(texto[i]);
+
+             else
+
+                 texto[i] = tolower(texto[i]);
+
+         }
+
+     }
+ 
+    cout << "Resultado: " << texto << endl;
     pausar();
     limparConsola();
 }
