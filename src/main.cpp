@@ -24,8 +24,46 @@ void pausar() {
 // Funções para cada opção do menu
 void opcao1() {
     limparConsola();
-    cout << "\n=== OPÇÃO 1 SELECIONADA ===\n";
-    cout << "INC 1.\n";
+    cout << "\n=== JOGO QUENTE OU FRIO ===\n";
+    srand((unsigned)time(NULL));
+    int numeroSecreto = rand() % 100 + 1;
+    int palpite, tentativas = 0;
+ 
+    cout << "Tente adivinhar o número entre 1 e 100!\n";
+ 
+    do {
+        cout << "Digite seu palpite: ";
+        while (!(cin >> palpite) || palpite < 1 || palpite > 100) {
+            cout << "Entrada inválida! Digite um número entre 1 e 100: ";
+            limparBuffer();
+        }
+        limparBuffer();
+        tentativas++;
+ 
+        int diferenca = abs(numeroSecreto - palpite);
+ 
+        if (palpite == numeroSecreto) {
+            cout << "Parabéns! Você acertou em " << tentativas << " tentativa(s)!\n";
+        } else if (diferenca <= 5) {
+            cout << "Quente! ";
+            if (palpite < numeroSecreto)
+                cout << "Tente um número maior.\n";
+            else
+                cout << "Tente um número menor.\n";
+        } else if (diferenca <= 15) {
+            cout << "Morno! ";
+            if (palpite < numeroSecreto)
+                cout << "Tente um número maior.\n";
+            else
+                cout << "Tente um número menor.\n";
+        } else {
+            cout << "Frio! ";
+            if (palpite < numeroSecreto)
+                cout << "Tente um número maior.\n";
+            else
+                cout << "Tente um número menor.\n";
+        }
+    } while (palpite != numeroSecreto);
     pausar();
     limparConsola();
 }
