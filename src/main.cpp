@@ -70,8 +70,21 @@ void opcao1() {
 
 void opcao2() {
     limparConsola();
-    cout << "\n=== OPÇÃO 2 SELECIONADA ===\n";
-    cout << "INC 2.\n";
+    cout << "\n=== INVERTE LETRAS ===\n";
+
+    cout << "Digite uma palavra: ";
+
+    string palavra;
+
+    getline(cin, palavra);
+ 
+    // Inverter a palavra
+
+    string invertida = palavra;
+
+    reverse(invertida.begin(), invertida.end());
+ 
+    cout << "Palavra invertida: " << invertida << endl;
     pausar();
     limparConsola();
 }
@@ -95,9 +108,9 @@ void mostrarMenu() {
     cout << "\n========================================\n";
     cout << "           MENU PRINCIPAL\n";
     cout << "========================================\n";
-    cout << "1. Opção 1 - Descrição da opção 1\n";
-    cout << "2. Opção 2 - Descrição da opção 2\n";
-    cout << "3. Opção 3 - Descrição da opção 3\n";
+    cout << "1. Opção 1 - Jogo do quente ou frio\n";
+    cout << "2. Opção 2 - Inverte letras\n";
+    cout << "3. Opção 3 - Alterna maiúsculas e minúsculas\n";
     cout << "4. Sair do programa\n";
     cout << "========================================\n";
     cout << "Digite sua opção: ";
