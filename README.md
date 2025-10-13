@@ -1,2 +1,2 @@
 # Trabalho2cpp
-Maquina do valas de novo e o escravo do joão
+Maquina do João Sintra de novo e o escravo do Valass
